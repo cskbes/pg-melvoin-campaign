@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Principal Garmon Campaign</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        // Wait for EmailJS to load with timeout
+        function initEmailJS() {
+            if (typeof emailjs !== 'undefined') {
+                emailjs.init("G8WFX-uXZXqyByVNE");
+                console.log('EmailJS initialized successfully');
+            } else {
+                setTimeout(initEmailJS, 100);
+            }
+        }
+        initEmailJS();
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .form-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+
+        .form-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .email-preview {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .email-preview h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .email-content {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .email-content strong {
+            font-weight: bold;
+        }
+
+        .send-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto 0;
+            min-width: 200px;
+        }
+
+        .send-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .send-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .status-message {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .form-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📧 Support Principal Garmon</h1>
+            <p>Send your message to Board Member Melvoin supporting Principal Garmon</p>
+        </div>
+
+        <div class="content">
+            <form id="emailForm">
+                <div class="form-section">
+                    <h3>👤 Your Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="userName">Your Full Name *</label>
+                        <input type="text" id="userName" name="userName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userEmail">Your Email Address *</label>
+                        <input type="email" id="userEmail" name="userEmail" required>
+                    </div>
+                </div>
+
+                <div class="email-preview">
+                    <h4>📋 Email Preview</h4>
+                    <div><strong>To:</strong> <span id="previewRecipient">cskbes@gmail.com</span></div>
+                    <div><strong>Subject:</strong> <span id="previewSubject">Urgent: Support for Principal Garmon and Opposition to Her Removal</span></div>
+                    <div class="email-content" id="previewContent">
+Dear <strong>Board Member Melvoin</strong>:
+
+As your District 4 constituent and Broadway Elementary parent, I am writing to express my strong opposition to the District's decision to remove Principal Garmon from our school. I believe this decision is misguided and will ultimately harm our school and the children. <strong>More troubling, this appears to be a transparent attempt to scapegoat Principal Garmon for the District's own systemic failures.</strong>
+
+Principal Garmon has demonstrated unwavering dedication throughout her 10+ year tenure and possesses irreplaceable understanding of Broadway Elementary's unique dual language immersion programs. <strong>The District seems determined to ignore a fundamental truth</strong>: the complicated dynamics between our programs have existed for over 10 years---long before her leadership. She has skillfully navigated these complexities despite District constraints, including following a UCP complaint filed only six weeks into her principalship.
+
+<strong>Replacing Principal Garmon will exacerbate, rather than resolve, the underlying issues</strong> she inherited from LAUSD decisions over the years. <strong>This decision represents a failure of leadership at the District level</strong> and takes the easy path of removing a dedicated principal. <strong>Removing Principal Garmon would devastate the school, continue LAUSD's longstanding pattern of neglect toward Broadway, and inflame existing tensions.</strong>
+
+<strong>The District needs to find a real solution to Broadway's systemic challenges, but removing our principal is not it.</strong> As our elected representative, I urge you to advocate for reconsidering this decision and instead direct the District to work collaboratively with Principal Garmon to address the systemic issues that face our school. <strong>Your leadership for our District 4 community is crucial at this moment.</strong>
+
+Sincerely,
+
+[USER_NAME]
+
+Parent of Broadway Elementary School Student
+District 4 Constituent
+                    </div>
+                </div>
+
+                <div class="status-message" id="statusMessage"></div>
+
+                <button type="submit" class="send-button" id="sendButton">
+                    🚀 Send Email to Board Member Melvoin
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // EmailJS Configuration
+        const EMAILJS_SERVICE_ID = 'service_zf9dbpb';
+        const EMAILJS_TEMPLATE_ID = 'template_lbu5q5p';
+        const EMAILJS_PUBLIC_KEY = 'G8WFX-uXZXqyByVNE';
+
+        // Form elements
+        const form = document.getElementById('emailForm');
+        const sendButton = document.getElementById('sendButton');
+        const statusMessage = document.getElementById('statusMessage');
+
+        // Preview elements
+        const previewRecipient = document.getElementById('previewRecipient');
+        const previewSubject = document.getElementById('previewSubject');
+        const previewContent = document.getElementById('previewContent');
+
+        // Update preview in real-time
+        function updatePreview() {
+            const userName = document.getElementById('userName').value || '[USER_NAME]';
+            
+            // Fixed values for campaign
+            const recipient = 'cskbes@gmail.com';
+            const subject = 'Urgent: Support for Principal Garmon and Opposition to Her Removal';
+            const template = `Dear <strong>Board Member Melvoin</strong>:
+
+As your District 4 constituent and Broadway Elementary parent, I am writing to express my strong opposition to the District's decision to remove Principal Garmon from our school. I believe this decision is misguided and will ultimately harm our school and the children. <strong>More troubling, this appears to be a transparent attempt to scapegoat Principal Garmon for the District's own systemic failures.</strong>
+
+Principal Garmon has demonstrated unwavering dedication throughout her 10+ year tenure and possesses irreplaceable understanding of Broadway Elementary's unique dual language immersion programs. <strong>The District seems determined to ignore a fundamental truth</strong>: the complicated dynamics between our programs have existed for over 10 years---long before her leadership. She has skillfully navigated these complexities despite District constraints, including following a UCP complaint filed only six weeks into her principalship.
+
+<strong>Replacing Principal Garmon will exacerbate, rather than resolve, the underlying issues</strong> she inherited from LAUSD decisions over the years. <strong>This decision represents a failure of leadership at the District level</strong> and takes the easy path of removing a dedicated principal. <strong>Removing Principal Garmon would devastate the school, continue LAUSD's longstanding pattern of neglect toward Broadway, and inflame existing tensions.</strong>
+
+<strong>The District needs to find a real solution to Broadway's systemic challenges, but removing our principal is not it.</strong> As our elected representative, I urge you to advocate for reconsidering this decision and instead direct the District to work collaboratively with Principal Garmon to address the systemic issues that face our school. <strong>Your leadership for our District 4 community is crucial at this moment.</strong>
+
+Sincerely,
+
+[USER_NAME]
+
+Parent of Broadway Elementary School Student
+District 4 Constituent`;
+
+            previewRecipient.textContent = recipient;
+            previewSubject.textContent = subject;
+            
+            // Replace placeholders in template for preview
+            let processedContent = template.replace(/\[USER_NAME\]/g, userName);
+            
+            // Display HTML content properly in preview
+            previewContent.innerHTML = processedContent;
+        }
+
+        // Add event listeners for real-time preview
+        ['userName', 'userEmail'].forEach(id => {
+            document.getElementById(id).addEventListener('input', updatePreview);
+        });
+
+        // Initial preview update
+        updatePreview();
+
+        // Show status message
+        function showStatus(message, isError = false) {
+            statusMessage.textContent = message;
+            statusMessage.className = `status-message ${isError ? 'status-error' : 'status-success'}`;
+            statusMessage.style.display = 'block';
+            
+            setTimeout(() => {
+                statusMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        // Handle form submission
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            sendButton.disabled = true;
+            sendButton.textContent = '⏳ Sending...';
+
+            try {
+                const formData = new FormData(form);
+                const userName = formData.get('userName');
+                const userEmail = formData.get('userEmail');
+                
+                // Fixed values for campaign
+                const recipientEmail = 'cskbes@gmail.com'; // Using test email for now
+                const subject = 'Urgent: Support for Principal Garmon and Opposition to Her Removal';
+                
+                // Template for email to Board Member Melvoin
+                const melvoinTemplate = `<p>Dear <strong>Board Member Melvoin</strong>:</p>
+
+<p>As your District 4 constituent and Broadway Elementary parent, I am writing to express my strong opposition to the District's decision to remove Principal Garmon from our school. I believe this decision is misguided and will ultimately harm our school and the children. <strong>More troubling, this appears to be a transparent attempt to scapegoat Principal Garmon for the District's own systemic failures.</strong></p>
+
+<p>Principal Garmon has demonstrated unwavering dedication throughout her 10+ year tenure and possesses irreplaceable understanding of Broadway Elementary's unique dual language immersion programs. <strong>The District seems determined to ignore a fundamental truth</strong>: the complicated dynamics between our programs have existed for over 10 years—long before her leadership. She has skillfully navigated these complexities despite District constraints, including following a UCP complaint filed only six weeks into her principalship.</p>
+
+<p><strong>Replacing Principal Garmon will exacerbate, rather than resolve, the underlying issues</strong> she inherited from LAUSD decisions over the years. <strong>This decision represents a failure of leadership at the District level</strong> and takes the easy path of removing a dedicated principal. <strong>Removing Principal Garmon would devastate the school, continue LAUSD's longstanding pattern of neglect toward Broadway, and inflame existing tensions.</strong></p>
+
+<p><strong>The District needs to find a real solution to Broadway's systemic challenges, but removing our principal is not it.</strong> As our elected representative, I urge you to advocate for reconsidering this decision and instead direct the District to work collaboratively with Principal Garmon to address the systemic issues that face our school. <strong>Your leadership for our District 4 community is crucial at this moment.</strong></p>
+
+<p>Sincerely,</p>
+
+<p><strong>${userName}</strong><br>
+Parent of Broadway Elementary School Student<br>
+District 4 Constituent</p>`;
+
+                // FIRST EMAIL: Send to Board Member Melvoin
+                const emailParams = {
+                    to_email: recipientEmail,
+                    from_name: userName,
+                    from_email: userEmail,
+                    subject: subject,
+                    message: melvoinTemplate
+                };
+
+                console.log('Sending email to Board Member Melvoin:', recipientEmail);
+                console.log('Email params:', emailParams);
+                const response = await emailjs.send(
+                    EMAILJS_SERVICE_ID,
+                    EMAILJS_TEMPLATE_ID,
+                    emailParams
+                );
+                console.log('Email sent successfully:', response);
+
+                // SECOND EMAIL: Send confirmation to sender
+                const confirmationTemplate = `<p>Hi <strong>${userName}</strong>,</p>
+
+<p>Thank you for supporting Principal Garmon!</p>
+
+<p>Your email has been successfully sent to Board Member Melvoin with the following details:</p>
+
+<p><strong>Subject:</strong> Urgent: Support for Principal Garmon and Opposition to Her Removal<br>
+<strong>Sent at:</strong> ${new Date().toLocaleString()}</p>
+
+<p>Here's a copy of what was sent:</p>
+
+<hr>
+${melvoinTemplate}
+<hr>
+
+<p>Thank you for your support in keeping Principal Garmon at Broadway Elementary School!</p>
+
+<p>Best regards,<br>
+Support Principal Garmon Campaign Team</p>`;
+
+                const confirmationParams = {
+                    to_email: userEmail,
+                    from_name: 'Support Principal Garmon Campaign',
+                    from_email: 'noreply@campaign.com',
+                    subject: 'Confirmation: Your email to Board Member Melvoin opposing Principal Garmon\'s removal was sent',
+                    message: confirmationTemplate
+                };
+
+                console.log('Sending confirmation email to:', userEmail);
+                await emailjs.send(
+                    EMAILJS_SERVICE_ID,
+                    EMAILJS_TEMPLATE_ID,
+                    confirmationParams
+                );
+
+                showStatus('✅ Email sent successfully to Board Member Melvoin! You should receive a confirmation copy shortly.');
+                form.reset();
+                updatePreview();
+
+            } catch (error) {
+                console.error('Error sending email:', error);
+                console.error('Error details:', error.text || error.message);
+                showStatus(`❌ Failed to send email: ${error.text || error.message || 'Unknown error'}. Please try again or contact support.`, true);
+            } finally {
+                sendButton.disabled = false;
+                sendButton.textContent = '🚀 Send Email to Board Member Melvoin';
+            }
+        });
+    </script>
+</body>
+</html>
